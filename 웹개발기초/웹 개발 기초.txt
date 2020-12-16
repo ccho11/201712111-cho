@@ -1,0 +1,95 @@
+자바스크립트 할수있는일
+web client 개발 web sever 개발 mobile 앱 개발(hybrid앱 페북 사클등)  desktop 앱 개발 game 개발 데이터베이스 관리
+
+소스파일을 작성X Node.js의 REPL 사용
+			REPL (read -eva -print loop)
+			한줄씩 입력할때마다 실행 결과 확인가능
+			간단한 자바스크립트 코드연습 유용
+소스파일을 작성O	JavaScript 소스만 작성하는 경우
+			node.js 사용
+		HTML에 JavaScript를 포함하는 경우
+			chrome 등의 웹브라우저를 이용
+
+1.기본용어
+-표현식(expression) 값을 만들어 내는 간단한 코드
+-문장(sentence) 표현식이 하나 이상 모여 문장이 됨
+		문장의 끝에는 세미콜론 ; 찍음
+		c언어처럼 ; 를 꼭 찍지 않아도 됨
+		Souce code zipping 할때 꼭 있어야 하므로 찍어주는 습관을 유지합시다.
+-키워드(keyword)
+	식별자 변수나 함수에 이름을 붙이기 위해 사용
+		규칙 	영어, 숫자와 특수문자 :  $, ( _ )
+				O >>_name, $money   X >> #sign
+			숫자로 시작할수없다
+				365days >> day365
+			공백 사용X
+				my name >> my_name, myname,myName
+			키워드를 식별자로 사용할수없다 break >> breaker, const >> constant, finally >> final
+-주석(comment)	슬래시* blah blah *슬래시 ))주석
+
+2. 출력
+-console.log("문자열")
+-REPL(node.js)
+
+3. 기본 자료형 ★★★★★★★★★★★★★★★★★★★
+-수 number +-*/%
+-문자열 string '|'싱글 "|" 더블 `|` 그레이브
+-불 boolean
+-undefined
+-함수 function
+-object
+
+4. 변수상수
+변수선언 	중복X var function scope 
+	중복O let block scope
+변수에 값 할당
+
+상수 식별자 선언시에 초기화 값을 변경할 수 없
+ 사용법 1상수선언과 동시에 값을 할당
+
+5. 기타대입연산자
+복합대입연산자
+a += 10 >> a = a+10
+
+증감연산자
+변수++, ++변수 변수값 1증가
+변수--, --변수 변수값 1감소
+
+자료확인연산자
+typeof 변수에저장된자료형검사 typeof (변수또는값)
+넘버 스트링 불리언 언디파인드 등등 이거로함★★★★★★★★★★★★★★★★★★★
+
+6.자료형변환
+강제 자료형변환 	Number() 365=365  ture=1  DIT=Nan
+		String() 내용전부 문자열변환
+		Boolean() false변환 = 0 NaN ""(빈문자열) null undefined 뺴고전부 true
+자동 자료형변환 수+ "문자열" 수가 자동으로 문자열로변환되어 연결(덧셈만문자우선 -*/전부 숫자우선)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

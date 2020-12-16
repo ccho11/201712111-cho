@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마일리지 관리 프로그램</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function aa(n){
+            var x = $("#phone").val()+n;
+            $("#phone").val(x);
+        }
+        function phoneFormat(){
+            var str = $("#phone").text().trim();    
+            var phone = str.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
+            $("#phone").text(phone);
+        }
+
+        $(document).ready(function(){
+            $("#btm").click(function(){
+                var ran = Math.random();
+                var ran1 = Math.floor(ran*100+1);
+                $("#ran1").text(ran1+",000");
+            });
+            $("#del").click(function(){
+                var a = $("#phone").val();
+                a = a.substring(0,a.length - 1);
+                $("#phone").val(a);
+            });
+            $("#res").click(function(){
+                $("#phone").val("");
+            });
+            $("#phone").click(function() {
+		        var textinput = $("#phone").val();
+		        textinput = textinput.replace(/[^0-9]/g, '');
+		        var tmp = ""
+
+		        if (textinput.length > 3 && textinput.length <= 7) {
+			        tmp += textinput.substr(0, 3);
+			        tmp += '-';
+			        tmp += textinput.substr(3);
+			        $("#phone").val(tmp);
+		        } else if (textinput.length > 7) {
+			        tmp += textinput.substr(0, 3);
+			        tmp += '-';
+			        tmp += textinput.substr(3, 4);
+			        tmp += '-';
+			        tmp += textinput.substr(7);
+			        $("#phone").val(tmp);
+		        }
+            });
+            $("#phone").click(function() {
+                if($(this).val().length > 13) {
+                    $(this).val($(this).val().substring(0, 13));
+                }
+            });
+        });
+        
+  
+        
+    </script>
+    <style>
+        #ran1{
+            font-size: 30px;
+            text-align: center;
+            border: 3px solid lightcoral;
+            width: 115px;
+            height: 42px;
+        }
+        
+        #phone{
+            font-size: 30px;
+            text-align: left;
+            border: 3px solid lightcoral;
+            width: 210px;
+            height: 42px;
+        }
+        #btm{
+            border :3px solid lightcoral;
+            background-color:lightcoral;
+            width: 120px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .bt{
+            border: white;
+            background-color:white;
+            color: lightcoral ;
+            font-size: 40px;
+            padding-top: 0%;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>마일리지 관리 프로그램</h1>
+    <hr>
+    <p id="ran1"></p>
+    <button id="btm">금액설정</button>
+    <br>
+    <hr>
+    
+    <input type="text" id="phone" readonly><br><br>
+    <button class="bt" value="0" onclick="aa(this.value)">0</button>
+    <button class="bt" value="1" onclick="aa(this.value)">1</button>
+    <button class="bt" value="2" onclick="aa(this.value)">2</button>
+    <button class="bt" value="3" onclick="aa(this.value)">3</button>
+    <button class="bt" value="4" onclick="aa(this.value)">4</button>
+    <button class="bt" value="5" onclick="aa(this.value)">5</button>
+    <button class="bt" value="6" onclick="aa(this.value)">6</button>
+    <button class="bt" value="7" onclick="aa(this.value)">7</button>
+    <button class="bt" value="8" onclick="aa(this.value)">8</button>
+    <button class="bt" value="9" onclick="aa(this.value)">9</button>
+    <button class="bt" value="del" id="del">D</button>
+    <button class="bt" value="res" id="res">R</button>
+
+</body>
+</html>

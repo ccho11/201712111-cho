@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>웹개발기초II</h1>
+    <h2>BOM: Browser Object Model</h2>
+    <hr>
+    <p>ㅇㄴㅁㅇㄴㅁㅇㄴㅁ</p>
+
+  </body>
+<script type="text/javascript">
+
+console.log("HTML문서에서 console 출력")
+//화면에 나오지않음 F12로 console에 들어가 확인
+//기술적 내용을 확인하기 위해서 사용
+document.write("<h3>문서 영역(body)에 출력하는 메소드.</h3>")
+//화면에 나옴 화면에 출력하기 위해서 사용
+//컨트롤 D하면 같은이름 선택 같이바꿀수이씃ㅁ
+let count=1;
+for(let key in navigator){
+  document.write(`(${count++})[<b>${key}</b>]: ${navigator[key]}<br>`);
+}
+</script>
+
+</html>

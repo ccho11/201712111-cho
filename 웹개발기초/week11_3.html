@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표준이벤트모델</title>
+    <script>
+            //----
+             function h1MouseDown(){
+                this.innerHTML = "문서객체모델 프로그래밍";
+            }
+            function h1MouseUp(){
+                this.innerHTML = "DOM Object Programming";
+            }
+            function h2AAClick(){
+                alert('부산진구 양정 소재 대학교');
+            }
+            function h2SSClick(){
+                alert('미래관 7층으로 오세요.');
+            }
+            function h2SSClick2(){
+                alert('213');
+            }
+            //---- 
+        window.onload = function(){
+        
+            //표준이벤트모델.
+            //객체의 이벤트 속성에 메소드를 이용하여 이벤트 핸들러를 연결한다.
+            let h1 = document.querySelector("h1");
+            h1.addEventListener("mousedown", h1MouseDown);
+            h1.addEventListener("mouseup", h1MouseUp);
+            //----
+            document.getElementById("aa").addEventListener("click", h2AAClick);
+            document.getElementById("ss").addEventListener("click", h2SSClick);
+            document.getElementById("ss").addEventListener("click", h2SSClick2);
+
+        }
+    </script>
+</head>
+<body>
+    <h1 id="subject">DOM Object Programming</h1>
+    <hr>
+    <h2 id="aa">431241431241</h2>
+    <h2 id="ss">431414141431</h2>
+</body>
+</html>

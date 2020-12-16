@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event Test</title>
+    <style>
+        div {
+            border: 1px solid black;
+            width: 70%;
+            padding: 40px;
+        }
+        span{
+            border: 3px solid olive;
+            padding: 2px;
+            background-color: antiquewhite;
+        }
+        p{
+            line-height: 40px;
+        }
+    </style>
+    <script>
+        //--
+        function mouseEnter(){
+            this.style.borderColor = "red";
+            let p = document.querySelector("p");
+            p.innerHTML += "<span>" + this.id + "</span>에 진입하였습니다.<br>";
+
+        }
+
+        function mouseOver(){
+            this.style.borderColor = "blue";
+            this.style.backgroundColor = 'yellow';
+            let p = document.querySelector("p");
+            p.innerHTML += "<span>" + this.id + "</span>오버했습니다.<br>";
+
+        }
+
+        function mouseLeave(){
+            this.style.borderColor = "black";
+            let p = document.querySelector("p");
+            p.innerHTML += "<span>" + this.id + "</span>를 떠났습니다.<br>";
+
+        }
+
+        function mouseOut(){
+            this.style.borderColor = "black";
+            let p = document.querySelector("p");
+            p.innerHTML += "<span>" + this.id + "</span>떠났습니다.<br>";
+
+        }
+        function clearP(){
+            this.innerHTML = "";
+        }
+        //--
+        window.onload = function(){
+            //div 객체들에 각각 event listener를 등록한다.
+            let divArray = document.querySelectorAll("div");
+            for(let item of divArray){
+               // item.addEventListener("mouseenter", mouseEnter);
+               // item.addEventListener("mouseleave", mouseLeave);
+                item.addEventListener("mouseover", mouseOver);
+                item.addEventListener("mouseout", mouseOut);
+
+            }
+            document.querySelector("p").addEventListener("click", clearP);
+        }
+        //--
+    </script>
+</head>
+<body>
+    <h1>Mouse Event : mouseover vs mouseenter</h1>
+    <hr>
+    <div id="divA">
+        DIV A
+        <div id="divB">
+            DIV B
+            <div id="divC">
+                DIV C
+            </div>
+        </div>
+    </div>
+    <br>
+    <h2>Event log</h2>
+    <p></p>
+</body>
+</html>

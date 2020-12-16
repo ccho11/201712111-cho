@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIV Moving Control</title>
+    <style>
+        div{
+            border: 1px solid blue;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            
+        }
+    </style>
+    <script>
+        //==
+        //버튼 이벤트 핸들러 정의
+        //==
+        function moveLeft(){
+            let div = document.querySelector("div");
+            let currentLeft = parseInt(getComputedStyle(div).getPropertyValue("left"));
+
+            currentLeft -= 10;
+            div.style.left = currentLeft + "px";
+            div.innerHTML = getComputedStyle(div).getPropertyValue("left") + "," + parseInt(getComputedStyle(div).getPropertyValue("top"));
+        }
+        function moveRight(){
+            let div = document.querySelector("div");
+            let currentLeft = parseInt(getComputedStyle(div).getPropertyValue("left"));
+
+            currentLeft += 10;
+            div.style.left = currentLeft + "px";
+            div.innerHTML = getComputedStyle(div).getPropertyValue("left") + "," + parseInt(getComputedStyle(div).getPropertyValue("top"));
+
+        }
+        function moveUp(){
+            let div = document.querySelector("div");
+            let currentTop = parseInt(getComputedStyle(div).getPropertyValue("top"));
+
+            currentTop -= 10;
+            div.style.top = currentTop + "px";
+            div.innerHTML = getComputedStyle(div).getPropertyValue("left") + "," + parseInt(getComputedStyle(div).getPropertyValue("top"));
+
+        }
+        function moveDown(){
+            let div = document.querySelector("div");
+            let currentTop = parseInt(getComputedStyle(div).getPropertyValue("top"));
+
+            currentTop += 10;
+            div.style.top = currentTop + "px";
+            div.innerHTML = getComputedStyle(div).getPropertyValue("left") + "," + parseInt(getComputedStyle(div).getPropertyValue("top"));
+        }
+        //==
+        //==
+        window.onload = function(){
+            document.getElementById("moveLeft").addEventListener("click", moveLeft);
+            document.getElementById("moveRight").addEventListener("click", moveRight);
+            document.getElementById("moveUp").addEventListener("click", moveUp);
+            document.getElementById("moveDown").addEventListener("click", moveDown);
+        }
+        //==
+    </script>
+</head>
+<body>
+    <h1>DIV Moving Control</h1>
+    <hr>
+    <button id="moveLeft">left</button>
+    <button id="moveRight">right</button>
+    <button id="moveUp">Up</button>
+    <button id="moveDown">Down</button>
+    <div>Javascript</div>
+</body>
+</html>

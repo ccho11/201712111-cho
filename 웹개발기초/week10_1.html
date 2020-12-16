@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Document Object Model</title>
+    <script type="text/javascript">
+      function showDocument() {
+        let count = 1;
+        for(let key in doucument) {
+          document.write(`(${count++})<b>[${key}]</b> : ${document[key]}<br>`)
+        }
+    }
+      window.onload = function() {
+        //웹 문서의 내용이 모두 브라우저 화면에 그려지고 나면... onload이벤트 발생.!!
+
+          //alert("Prosess-0");//경고창띄우기 alert
+          // <body>~</body> 내에 있는 h1의 배경색을 변경하는 코드
+          document.querySelector("h1").style.backgroundColor = "yellow";//배경색
+          document.querySelector("h1").style.color = "blue";//글자색
+          showDocument();
+    }
+  </script>
+
+  </head>
+  <body>
+    <h1>Heading 1</h1>
+    <hr>
+
+  </body>
+
+</html>
